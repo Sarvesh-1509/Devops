@@ -3,4 +3,4 @@ uvicorn
 scikit-learn
 pandas
 jinja2
-python-multipart
+python-multipart 
