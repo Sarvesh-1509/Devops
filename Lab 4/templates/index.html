@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Boston Housing Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            margin: 40px auto;
+            max-width: 600px;
+            padding: 20px;
+        }
+        h1, h2 {
+            border-bottom: 1px solid #000;
+            padding-bottom: 5px;
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+        label {
+            display: inline-block;
+            width: 150px;
+            font-weight: bold;
+        }
+        input[type="number"] {
+            width: 200px;
+            padding: 4px;
+        }
+        button {
+            margin-top: 15px;
+            padding: 8px 15px;
+            background-color: #000000;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #333333;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border: 2px solid #000;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Boston Housing Price Prediction</h1>
+    <p>Enter the 13 housing features below to predict the median house value.</p>
+    
+    <form action="/" method="POST">
+        {% for feature in features %}
+        <div class="form-group">
+            <label for="{{ feature }}">{{ feature }}:</label>
+            <input type="number" step="any" id="{{ feature }}" name="{{ feature }}" value="0.0" required>
+        </div>
+        {% endfor %}
+        <button type="submit">Predict Price</button>
+    </form>
+
+    {% if prediction %}
+    <div class="result">
+        <h2>Prediction Result</h2>
+        <p><strong>Predicted Value:</strong> {{ prediction }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>

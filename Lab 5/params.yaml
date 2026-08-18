@@ -1,0 +1,11 @@
+prepare:
+  test_size: 0.2
+  random_state: 42
+
+train:
+  n_estimators: 100
+  random_state: 42
+  max_depth: 10
+
+evaluate:
+  min_r2_score: 0.70
