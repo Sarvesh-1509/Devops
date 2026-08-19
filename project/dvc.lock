@@ -1,0 +1,18 @@
+schema: '2.0'
+stages:
+  train:
+    cmd: python src/train.py
+    deps:
+    - path: data/breast_cancer.csv
+      hash: md5
+      md5: 5afc23b9622f8f9ffa60824f4e97d0d5
+      size: 121385
+    - path: src/train.py
+      hash: md5
+      md5: 02e5ea97ee5807962fa2b825595288c5
+      size: 3925
+    outs:
+    - path: models/best_model.pkl
+      hash: md5
+      md5: dd9a00373cacc6a76cedef3fb9a50a99
+      size: 3073
